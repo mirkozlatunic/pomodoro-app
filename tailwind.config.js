@@ -4,7 +4,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'regular-blue': '#1E213F',
+        page: '#1E213F',
+        font: '#D7E0FF',
+      },
+      fontFamily: {
+        sans: ['Kumbh Sans', 'sans-serif'],
       },
     },
   },
