@@ -1,3 +1,3 @@
 export default function Timer() {
-  return <div>Timer</div>;
+  return <div className="flex justify-center">Timer</div>;
 }

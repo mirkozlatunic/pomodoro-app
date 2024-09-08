@@ -8,7 +8,7 @@ import './index.css';
 const App = () => {
   return (
     <div>
-      <h1>pomodoro</h1>
+      <h1 className="text-center">pomodoro</h1>
       <Selection />
       <Timer />
       <Settings />
