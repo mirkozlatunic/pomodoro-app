@@ -7,11 +7,13 @@ import './index.css';
 
 const App = () => {
   return (
-    <div>
-      <h1 className="text-center">pomodoro</h1>
-      <Selection />
-      <Timer />
-      <Settings />
+    <div className="min-h-screen bg-regular-blue">
+      <div className="py-12">
+        <h1 className="text-center">pomodoro</h1>
+        <Selection />
+        <Timer />
+        <Settings />
+      </div>
     </div>
   );
 };
