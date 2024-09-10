@@ -9,7 +9,9 @@ const App = () => {
   return (
     <div className="min-h-screen bg-page text-font">
       <div className="py-12">
-        <h1 className="text-center font-bold text-3xl sm:text-2xl">pomodoro</h1>
+        <h1 className="text-center font-bold text-3xl sm:text-2xl mb-3">
+          pomodoro
+        </h1>
         <Selection />
         <Timer />
         <Settings />
