@@ -1,7 +1,7 @@
-export default function Settings() {
-  return (
-    <div className="flex justify-center">
-      <button>Settings</button>
-    </div>
-  );
+import React from 'react';
+
+type Props = {};
+
+export default function settings({}: Props) {
+  return <div>settings</div>;
 }

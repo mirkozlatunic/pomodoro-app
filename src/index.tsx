@@ -8,10 +8,8 @@ import './index.css';
 const App = () => {
   return (
     <div className="min-h-screen bg-page text-font">
-      <div className="py-12">
-        <h1 className="text-center font-bold text-3xl sm:text-2xl mb-3">
-          pomodoro
-        </h1>
+      <div className="py-12 flex flex-col  items-center">
+        <h1 className="font-bold text-3xl sm:text-2xl mb-3">pomodoro</h1>
         <Selection />
         <Timer />
         <Settings />
