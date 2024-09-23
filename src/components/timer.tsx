@@ -39,10 +39,10 @@ const CountdownTimer: React.FC = () => {
   const progress = 1 - timeLeft / (25 * 60);
 
   return (
-    <div className="flex items-center justify-center my-11">
-      <div className="relative w-96 h-96">
-        <div className="absolute w-full h-full rounded-full shadow-2xl">
-          <svg className="w-full h-full" viewBox="0 0 100 100">
+    <div className="flex items-center justify-center my-11 rounded-full bg-gradient-to-br from-bg_darkBlue to-bg_lightBlue w-[27rem] h-[27rem] drop-shadow-4xl">
+      <div className="relative w-96 h-96 rounded-full">
+        <div className="absolute w-full h-full rounded-full p-4 bg-[#161932]">
+          <svg className="w-ful h-full" viewBox="0 0 100 100">
             <circle
               className="text-[#F87070] stroke-current "
               strokeWidth="4"
@@ -57,7 +57,7 @@ const CountdownTimer: React.FC = () => {
           </svg>
         </div>
         <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center">
-          <span className="text-6xl font-bold text-[#D7E0FF]">
+          <span className="text-8xl font-bold text-[#D7E0FF]">
             {formatTime(timeLeft)}
           </span>
           <button
