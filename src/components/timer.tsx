@@ -56,7 +56,7 @@ const CountdownTimer: React.FC = () => {
             />
           </svg>
         </div>
-        <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center">
+        <div className="absolute top-8 left-0 w-full h-full flex flex-col items-center justify-center">
           <span className="text-8xl font-bold text-[#D7E0FF]">
             {formatTime(timeLeft)}
           </span>
