@@ -4,8 +4,12 @@ import Timer from './components/timer';
 import Settings from './components/settings';
 
 import './index.css';
+import { FaCog } from 'react-icons/fa';
+import { useState } from 'react';
 
 const App = () => {
+  const [open, setOpen] = useState<boolean>(false);
+
   return (
     <div className="min-h-screen bg-page text-font">
       <div className="py-12 flex flex-col  items-center">
@@ -14,7 +18,10 @@ const App = () => {
         </h1>
         <Selection />
         <Timer />
-        <Settings />
+        <button>
+          <FaCog className="text-2xl" onClick={() => setOpen(true)} />
+        </button>
+        <Settings open={open} onClose={() => setOpen(false)} />
       </div>
     </div>
   );

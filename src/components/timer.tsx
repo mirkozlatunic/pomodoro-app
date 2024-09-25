@@ -61,7 +61,7 @@ const CountdownTimer: React.FC = () => {
             {formatTime(timeLeft)}
           </span>
           <button
-            className="mt-4 px-4 py-2 text-[#D7E0FF] hover:text-[#F87070] rounded focus:outline-none uppercase text-m tracking-widest"
+            className="mt-4 pl-4 py-2 text-[#D7E0FF] hover:text-[#F87070] rounded focus:outline-none uppercase text-m tracking-widest"
             onClick={toggleTimer}
           >
             {buttonText}
