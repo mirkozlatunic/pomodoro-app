@@ -16,10 +16,13 @@ module.exports = {
         ],
       },
       letterSpacing: {
+        wider: '0.25rem',
         widest: '1rem',
       },
       fontFamily: {
         sans: ['Kumbh Sans', 'sans-serif'],
+        slab: ['Robot Slab', 'sans-serif'],
+        mono: ['Space Mono', 'mono'],
       },
     },
   },

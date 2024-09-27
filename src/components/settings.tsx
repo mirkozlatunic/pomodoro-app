@@ -19,18 +19,18 @@ const Settings: React.FC<SettingsProps> = ({ open, onClose }) => {
 
   return (
     <div
-      className={`fixed inset-0 flex justify-center items-center transition-colors ${
+      className={`fixed inset-0 flex justify-center items-center transition-colors  ${
         open ? 'visible bg-black/20' : 'invisible'
       }`}
       onClick={onClose}
     >
       <div
-        className={`bg-white rounded-2xl shadow p-8 transition-all max-w-md w-full ${
+        className={`bg-white rounded-2xl shadow p-8 transition-all max-w-lg w-full ${
           open ? 'scale-100 opacity-100' : 'scale-110 opacity-0'
         }`}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex justify-between items-center mb-6">
+        <div className="flex justify-between items-center mb-6 ">
           <h2 className="text-2xl font-bold text-[#161932]">Settings</h2>
           <button
             className="text-gray-400 hover:text-gray-600"
@@ -40,11 +40,11 @@ const Settings: React.FC<SettingsProps> = ({ open, onClose }) => {
           </button>
         </div>
 
-        <div className="mb-6">
-          <h3 className="uppercase text-sm font-bold text-[#161932] mb-4">
+        <div className="mb-6 pb-2">
+          <h3 className="uppercase text-sm font-bold text-[#161932] mb-4 tracking-wider">
             Time (Minutes)
           </h3>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-4 pb-6 border-b">
             {[
               { label: 'pomodoro', value: pomodoro, setter: setPomodoro },
               {
@@ -54,27 +54,25 @@ const Settings: React.FC<SettingsProps> = ({ open, onClose }) => {
               },
               { label: 'long break', value: longBreak, setter: setLongBreak },
             ].map((item) => (
-              <div key={item.label} className="bg-gray-100 rounded-lg p-2">
-                <label className="text-xs text-gray-400 block mb-1">
+              <div key={item.label} className="flex flex-col">
+                <label className="text-xs text-gray-400 mb-2 font-bold">
                   {item.label}
                 </label>
                 <input
                   type="number"
                   value={item.value}
                   onChange={(e) => item.setter(parseInt(e.target.value))}
-                  className="w-full bg-transparent text-[#161932] font-bold text-lg"
+                  className="w-full bg-gray-100 rounded-lg p-4 text-[#161932] font-bold text-sm"
                 />
               </div>
             ))}
           </div>
         </div>
 
-        <div className="mb-6">
-          <h3 className="uppercase text-sm font-bold text-[#161932] mb-4">
-            Font
-          </h3>
+        <div className="mb-6 flex justify-between items-center border-b pb-5">
+          <h3 className="uppercase text-sm font-bold text-[#161932]">Font</h3>
           <div className="flex space-x-4">
-            {['sans', 'serif', 'mono'].map((f) => (
+            {['sans', 'slab', 'mono'].map((f) => (
               <button
                 key={f}
                 onClick={() => setFont(f)}
@@ -90,12 +88,10 @@ const Settings: React.FC<SettingsProps> = ({ open, onClose }) => {
           </div>
         </div>
 
-        <div className="mb-8">
-          <h3 className="uppercase text-sm font-bold text-[#161932] mb-4">
-            Color
-          </h3>
+        <div className=" flex mb-8 justify-between items-center">
+          <h3 className="uppercase text-sm font-bold text-[#161932]">Color</h3>
           <div className="flex space-x-4">
-            {['red', 'cyan', 'purple'].map((c) => (
+            {['#f87070', '#70F3F8', '#D881F8'].map((c) => (
               <button
                 key={c}
                 onClick={() => setColor(c)}
@@ -106,7 +102,7 @@ const Settings: React.FC<SettingsProps> = ({ open, onClose }) => {
               >
                 {color === c && (
                   <svg
-                    className="w-6 h-6 mx-auto text-white"
+                    className="w-6 h-6 mx-auto text-black"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -124,12 +120,14 @@ const Settings: React.FC<SettingsProps> = ({ open, onClose }) => {
           </div>
         </div>
 
-        <button
-          onClick={handleApply}
-          className="w-full bg-[#f87070] text-white rounded-full py-3 font-bold hover:bg-[#ff9b9b] transition-colors"
-        >
-          Apply
-        </button>
+        <div className="flex justify-center">
+          <button
+            onClick={handleApply}
+            className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 bg-[#f87070] text-white rounded-full py-3 px-10 font-bold hover:bg-[#ff9b9b] transition-colors"
+          >
+            Apply
+          </button>
+        </div>
       </div>
     </div>
   );
