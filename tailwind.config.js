@@ -21,7 +21,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Kumbh Sans', 'sans-serif'],
-        slab: ['Robot Slab', 'sans-serif'],
+        slab: ['Robot Slab', 'slab'],
         mono: ['Space Mono', 'mono'],
       },
     },
