@@ -10,11 +10,24 @@ const Settings: React.FC<SettingsProps> = ({ open, onClose }) => {
   const [shortBreak, setShortBreak] = useState(5);
   const [longBreak, setLongBreak] = useState(15);
   const [font, setFont] = useState('sans');
-  const [color, setColor] = useState('red');
+  const [color, setColor] = useState('#f87070');
 
   const handleApply = () => {
     // Apply settings logic here
     onClose();
+  };
+
+  const getFontClass = (fontName: string) => {
+    switch (fontName) {
+      case 'kumbh-sans':
+        return 'font-kumbh-sans';
+      case 'roboto-slab':
+        return 'font-roboto-slab';
+      case 'space-mono':
+        return 'font-space-mono';
+      default:
+        return 'font-kumbh-sans';
+    }
   };
 
   return (
@@ -72,15 +85,19 @@ const Settings: React.FC<SettingsProps> = ({ open, onClose }) => {
         <div className="mb-6 flex justify-between items-center border-b pb-5">
           <h3 className="uppercase text-sm font-bold text-[#161932]">Font</h3>
           <div className="flex space-x-4">
-            {['sans', 'slab', 'mono'].map((f) => (
+            {[
+              { name: 'kumbh-sans', label: 'Aa' },
+              { name: 'roboto-slab', label: 'Aa' },
+              { name: 'space-mono', label: 'Aa' },
+            ].map((f) => (
               <button
-                key={f}
-                onClick={() => setFont(f)}
+                key={f.name}
+                onClick={() => setFont(f.name)}
                 className={`w-10 h-10 rounded-full ${
-                  font === f
+                  font === f.name
                     ? 'bg-[#161932] text-white'
                     : 'bg-gray-100 text-[#161932]'
-                }`}
+                } ${getFontClass(f.name)}`}
               >
                 Aa
               </button>

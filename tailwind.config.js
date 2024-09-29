@@ -20,9 +20,9 @@ module.exports = {
         widest: '1rem',
       },
       fontFamily: {
-        sans: ['Kumbh Sans', 'sans-serif'],
-        slab: ['Robot Slab', 'slab'],
-        mono: ['Space Mono', 'mono'],
+        'kumbh-sans': ['Kumbh Sans', 'sans-serif'],
+        'roboto-slab': ['Roboto Slab', 'serif'],
+        'space-mono': ['Space Mono', 'monospace'],
       },
     },
   },

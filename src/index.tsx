@@ -11,7 +11,7 @@ const App = () => {
   const [open, setOpen] = useState<boolean>(false);
 
   return (
-    <div className="min-h-screen bg-page text-font">
+    <div className="min-h-screen bg-page text-font font-kumbh-sans">
       <div className="py-12 flex flex-col  items-center">
         <h1 className="font-bold md:text-3xl text-2xl mb-10 md:mb-13">
           pomodoro
