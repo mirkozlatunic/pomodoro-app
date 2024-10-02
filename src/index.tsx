@@ -16,7 +16,6 @@ const App = () => {
         <h1 className="font-bold md:text-3xl text-2xl mb-10 md:mb-13">
           pomodoro
         </h1>
-        <Selection />
         <Timer />
         <button>
           <FaCog className="text-2xl" onClick={() => setOpen(true)} />

@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 type SectionType = 'pomodoro' | 'short break' | 'long break';
 
-const PomodoroSwitch: React.FC = () => {
-  const [activeSection, setActiveSection] = useState<SectionType>('pomodoro');
+interface PomodoroSwitchProps {
+  activeSection: SectionType;
+  setActiveSection: React.Dispatch<React.SetStateAction<SectionType>>;
+}
 
+const PomodoroSwitch: React.FC<PomodoroSwitchProps> = ({
+  activeSection,
+  setActiveSection,
+}) => {
   const sections: SectionType[] = ['pomodoro', 'short break', 'long break'];
 
   return (
