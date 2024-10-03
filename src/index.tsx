@@ -1,5 +1,4 @@
 import { createRoot } from 'react-dom/client';
-import Selection from './components/selection';
 import Timer from './components/timer';
 import Settings from './components/settings';
 
