@@ -5,6 +5,12 @@ type SettingsProps = {
   onClose: () => void;
 };
 
+interface TimerSettings {
+  pomodoro: number;
+  'short break': number;
+  'long break': number;
+}
+
 const Settings: React.FC<SettingsProps> = ({ open, onClose }) => {
   const [pomodoro, setPomodoro] = useState(25);
   const [shortBreak, setShortBreak] = useState(5);
