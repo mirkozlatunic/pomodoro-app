@@ -19,6 +19,7 @@ const CountdownTimer: React.FC = () => {
     'short break': 5,
     'long break': 15,
   });
+  const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
 
   useEffect(() => {
     setTimeLeft(settings[mode] * 60);
@@ -58,6 +59,11 @@ const CountdownTimer: React.FC = () => {
   };
 
   const progress: number = 1 - timeLeft / (settings[mode] * 60);
+
+  const handleSettingsChange = (newSettings: TimerSettings) => {
+    setSettings(newSettings);
+    setTimeLeft(newSettings[mode] * 60);
+  };
 
   return (
     <div className="flex flex-col items-center justify-center">
