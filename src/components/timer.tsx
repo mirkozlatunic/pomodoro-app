@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PomodoroSwitch from './selection';
+import Settings from './settings';
+import { FaCog } from 'react-icons/fa';
 
 type TimerMode = 'pomodoro' | 'short break' | 'long break';
 
@@ -20,6 +22,7 @@ const CountdownTimer: React.FC = () => {
     'long break': 15,
   });
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   useEffect(() => {
     setTimeLeft(settings[mode] * 60);
@@ -104,6 +107,20 @@ const CountdownTimer: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <button
+        onClick={() => setIsSettingsModalOpen(true)}
+        className="px-4 py-2 text-white rounded hover:text-gray-100"
+      >
+        <FaCog className="text-2xl" onClick={() => setOpen(true)} />
+      </button>
+
+      <Settings
+        isOpen={isSettingsModalOpen}
+        onClose={() => setIsSettingsModalOpen(false)}
+        onApply={handleSettingsChange}
+        currentSettings={settings}
+      />
     </div>
   );
 };

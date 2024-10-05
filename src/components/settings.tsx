@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 
 type SettingsProps = {
-  open: boolean;
+  isOpen: boolean;
   onClose: () => void;
+  onApply: (newSettings: TimerSettings) => void;
+  currentSettings: TimerSettings;
 };
 
 interface TimerSettings {
@@ -11,7 +13,12 @@ interface TimerSettings {
   'long break': number;
 }
 
-const Settings: React.FC<SettingsProps> = ({ open, onClose }) => {
+const Settings: React.FC<SettingsProps> = ({
+  isOpen,
+  onClose,
+  onApply,
+  currentSettings,
+}) => {
   const [pomodoro, setPomodoro] = useState(25);
   const [shortBreak, setShortBreak] = useState(5);
   const [longBreak, setLongBreak] = useState(15);
@@ -39,13 +46,13 @@ const Settings: React.FC<SettingsProps> = ({ open, onClose }) => {
   return (
     <div
       className={`fixed inset-0 flex justify-center items-center transition-colors  ${
-        open ? 'visible bg-black/20' : 'invisible'
+        isOpen ? 'visible bg-black/20' : 'invisible'
       }`}
       onClick={onClose}
     >
       <div
         className={`bg-white rounded-2xl shadow p-8 transition-all max-w-lg w-full ${
-          open ? 'scale-100 opacity-100' : 'scale-110 opacity-0'
+          isOpen ? 'scale-100 opacity-100' : 'scale-110 opacity-0'
         }`}
         onClick={(e) => e.stopPropagation()}
       >
